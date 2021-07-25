@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct LearningApp: App {
-    let persistenceController = PersistenceController.shared
+    @StateObject private var vm = ContentViewModel()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            NavigationView {
+                ContentView()
+            }
+            .environmentObject(vm)
         }
     }
 }
