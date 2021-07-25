@@ -11,7 +11,7 @@ final class AddItemViewModel: ObservableObject {
 
     @Published var item: AddItem = AddItem(name: "", timestamp: Date())
 
-    private let itemDataService = ItemDataService()
+    private let itemDataService = ItemDataService.shared
 
     init() {}
 

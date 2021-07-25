@@ -11,7 +11,7 @@ import Combine
 class ContentViewModel: ObservableObject {
     @Published var allItems: [Item] = []
 
-    private let itemDataService = ItemDataService()
+    private let itemDataService = ItemDataService.shared
     private var cancellables = Set<AnyCancellable>()
 
     enum SortOption {

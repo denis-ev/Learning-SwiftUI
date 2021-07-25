@@ -27,7 +27,7 @@ struct ContentView: View {
             // content layer
             VStack {
                 List {
-                    ForEach(vm.allItems) { item in
+                    ForEach(vm.allItems, id: \.id) { item in
                         ItemRowView(item: item)
                     }
                     //            .onDelete(perform: deleteItems)

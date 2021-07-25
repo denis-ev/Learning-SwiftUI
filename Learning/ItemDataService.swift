@@ -65,6 +65,8 @@ class ItemDataService: ObservableObject {
 
     @Published var items: [Item] = []
 
+    static let shared = ItemDataService()
+
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: containerName)
         if inMemory {
